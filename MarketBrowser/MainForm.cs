@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -238,6 +239,38 @@ namespace MarketBrowser
                 }
             }
             printRowData_Rowbased(resultData, textBoxSearchResult);
+        }
+
+        string strconnection = "Server=27.96.130.41;Database=s5414057;Uid=s5414057;Pwd=s5414057;Charset=utf8";
+        private void buttonInsert_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection connection = new MySqlConnection(strconnection))
+            {
+                connection.Open();
+
+                string query = "INSERT INTO `s5414057`.`student` (`name`, `Contact`) VALUES ('dfasd', '1111');";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void buttonSelect_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection connection = new MySqlConnection(strconnection))
+            {
+                connection.Open();
+
+                string query = "select * from student";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    string str = string.Format(rdr["Sid"] + " " + rdr["name"] + " " + rdr["Contact"]);
+                    textBoxSearchResult.Text += str;
+                }
+                rdr.Close();
+            }
         }
     }
 }
