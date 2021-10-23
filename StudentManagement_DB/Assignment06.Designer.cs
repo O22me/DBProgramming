@@ -1,7 +1,7 @@
 ﻿
 namespace StudentManagement_DB
 {
-    partial class Form1
+    partial class Assignment06
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -31,16 +31,16 @@ namespace StudentManagement_DB
         {
             this.buttonLoadStudentInfo = new System.Windows.Forms.Button();
             this.groupBoxStudent1 = new System.Windows.Forms.GroupBox();
-            this.labelStudent1Name = new System.Windows.Forms.Label();
-            this.textBoxStudent1Name = new System.Windows.Forms.TextBox();
-            this.labelStudent1ID = new System.Windows.Forms.Label();
-            this.textBoxStudent1ID = new System.Windows.Forms.TextBox();
-            this.labelStudent1Gender = new System.Windows.Forms.Label();
-            this.comboBoxStudent1Gender = new System.Windows.Forms.ComboBox();
-            this.labelStudent1Memo = new System.Windows.Forms.Label();
-            this.textBoxStudent1Memo = new System.Windows.Forms.TextBox();
-            this.buttonStudent1Save = new System.Windows.Forms.Button();
             this.buttonStudent1Delete = new System.Windows.Forms.Button();
+            this.buttonStudent1Save = new System.Windows.Forms.Button();
+            this.comboBoxStudent1Gender = new System.Windows.Forms.ComboBox();
+            this.labelStudent1Gender = new System.Windows.Forms.Label();
+            this.textBoxStudent1Memo = new System.Windows.Forms.TextBox();
+            this.labelStudent1Memo = new System.Windows.Forms.Label();
+            this.textBoxStudent1ID = new System.Windows.Forms.TextBox();
+            this.labelStudent1ID = new System.Windows.Forms.Label();
+            this.textBoxStudent1Name = new System.Windows.Forms.TextBox();
+            this.labelStudent1Name = new System.Windows.Forms.Label();
             this.groupBoxStudent2Info = new System.Windows.Forms.GroupBox();
             this.buttonStudent2Delete = new System.Windows.Forms.Button();
             this.buttonStudent2Save = new System.Windows.Forms.Button();
@@ -64,8 +64,8 @@ namespace StudentManagement_DB
             this.textBoxStudent3Name = new System.Windows.Forms.TextBox();
             this.labelStudent3Name = new System.Windows.Forms.Label();
             this.groupBoxSettingInfo = new System.Windows.Forms.GroupBox();
-            this.checkBoxSettingInfo = new System.Windows.Forms.CheckBox();
             this.labelSettingInfo = new System.Windows.Forms.Label();
+            this.checkBoxSettingInfo = new System.Windows.Forms.CheckBox();
             this.groupBoxStudent1.SuspendLayout();
             this.groupBoxStudent2Info.SuspendLayout();
             this.groupBoxStudent3Info.SuspendLayout();
@@ -80,6 +80,7 @@ namespace StudentManagement_DB
             this.buttonLoadStudentInfo.TabIndex = 0;
             this.buttonLoadStudentInfo.Text = "학생정보 불러오기";
             this.buttonLoadStudentInfo.UseVisualStyleBackColor = true;
+            this.buttonLoadStudentInfo.Click += new System.EventHandler(this.buttonLoadStudentInfo_Click);
             // 
             // groupBoxStudent1
             // 
@@ -100,37 +101,33 @@ namespace StudentManagement_DB
             this.groupBoxStudent1.TabStop = false;
             this.groupBoxStudent1.Text = "학생1";
             // 
-            // labelStudent1Name
+            // buttonStudent1Delete
             // 
-            this.labelStudent1Name.AutoSize = true;
-            this.labelStudent1Name.Location = new System.Drawing.Point(25, 30);
-            this.labelStudent1Name.Name = "labelStudent1Name";
-            this.labelStudent1Name.Size = new System.Drawing.Size(29, 12);
-            this.labelStudent1Name.TabIndex = 0;
-            this.labelStudent1Name.Text = "이름";
+            this.buttonStudent1Delete.Location = new System.Drawing.Point(90, 273);
+            this.buttonStudent1Delete.Name = "buttonStudent1Delete";
+            this.buttonStudent1Delete.Size = new System.Drawing.Size(130, 24);
+            this.buttonStudent1Delete.TabIndex = 7;
+            this.buttonStudent1Delete.Text = "삭제";
+            this.buttonStudent1Delete.UseVisualStyleBackColor = true;
+            this.buttonStudent1Delete.Click += new System.EventHandler(this.buttonStudent1Delete_Click);
             // 
-            // textBoxStudent1Name
+            // buttonStudent1Save
             // 
-            this.textBoxStudent1Name.Location = new System.Drawing.Point(90, 27);
-            this.textBoxStudent1Name.Name = "textBoxStudent1Name";
-            this.textBoxStudent1Name.Size = new System.Drawing.Size(130, 21);
-            this.textBoxStudent1Name.TabIndex = 1;
+            this.buttonStudent1Save.Location = new System.Drawing.Point(90, 243);
+            this.buttonStudent1Save.Name = "buttonStudent1Save";
+            this.buttonStudent1Save.Size = new System.Drawing.Size(130, 24);
+            this.buttonStudent1Save.TabIndex = 6;
+            this.buttonStudent1Save.Text = "저장";
+            this.buttonStudent1Save.UseVisualStyleBackColor = true;
+            this.buttonStudent1Save.Click += new System.EventHandler(this.buttonStudent1Save_Click);
             // 
-            // labelStudent1ID
+            // comboBoxStudent1Gender
             // 
-            this.labelStudent1ID.AutoSize = true;
-            this.labelStudent1ID.Location = new System.Drawing.Point(25, 57);
-            this.labelStudent1ID.Name = "labelStudent1ID";
-            this.labelStudent1ID.Size = new System.Drawing.Size(29, 12);
-            this.labelStudent1ID.TabIndex = 0;
-            this.labelStudent1ID.Text = "학번";
-            // 
-            // textBoxStudent1ID
-            // 
-            this.textBoxStudent1ID.Location = new System.Drawing.Point(90, 54);
-            this.textBoxStudent1ID.Name = "textBoxStudent1ID";
-            this.textBoxStudent1ID.Size = new System.Drawing.Size(130, 21);
-            this.textBoxStudent1ID.TabIndex = 1;
+            this.comboBoxStudent1Gender.FormattingEnabled = true;
+            this.comboBoxStudent1Gender.Location = new System.Drawing.Point(90, 81);
+            this.comboBoxStudent1Gender.Name = "comboBoxStudent1Gender";
+            this.comboBoxStudent1Gender.Size = new System.Drawing.Size(130, 20);
+            this.comboBoxStudent1Gender.TabIndex = 4;
             // 
             // labelStudent1Gender
             // 
@@ -141,13 +138,13 @@ namespace StudentManagement_DB
             this.labelStudent1Gender.TabIndex = 0;
             this.labelStudent1Gender.Text = "성별";
             // 
-            // comboBoxStudent1Gender
+            // textBoxStudent1Memo
             // 
-            this.comboBoxStudent1Gender.FormattingEnabled = true;
-            this.comboBoxStudent1Gender.Location = new System.Drawing.Point(90, 81);
-            this.comboBoxStudent1Gender.Name = "comboBoxStudent1Gender";
-            this.comboBoxStudent1Gender.Size = new System.Drawing.Size(130, 20);
-            this.comboBoxStudent1Gender.TabIndex = 2;
+            this.textBoxStudent1Memo.Location = new System.Drawing.Point(90, 107);
+            this.textBoxStudent1Memo.Multiline = true;
+            this.textBoxStudent1Memo.Name = "textBoxStudent1Memo";
+            this.textBoxStudent1Memo.Size = new System.Drawing.Size(130, 130);
+            this.textBoxStudent1Memo.TabIndex = 5;
             // 
             // labelStudent1Memo
             // 
@@ -158,31 +155,37 @@ namespace StudentManagement_DB
             this.labelStudent1Memo.TabIndex = 0;
             this.labelStudent1Memo.Text = "메모";
             // 
-            // textBoxStudent1Memo
+            // textBoxStudent1ID
             // 
-            this.textBoxStudent1Memo.Location = new System.Drawing.Point(90, 107);
-            this.textBoxStudent1Memo.Multiline = true;
-            this.textBoxStudent1Memo.Name = "textBoxStudent1Memo";
-            this.textBoxStudent1Memo.Size = new System.Drawing.Size(130, 130);
-            this.textBoxStudent1Memo.TabIndex = 1;
+            this.textBoxStudent1ID.Location = new System.Drawing.Point(90, 54);
+            this.textBoxStudent1ID.Name = "textBoxStudent1ID";
+            this.textBoxStudent1ID.Size = new System.Drawing.Size(130, 21);
+            this.textBoxStudent1ID.TabIndex = 3;
             // 
-            // buttonStudent1Save
+            // labelStudent1ID
             // 
-            this.buttonStudent1Save.Location = new System.Drawing.Point(90, 243);
-            this.buttonStudent1Save.Name = "buttonStudent1Save";
-            this.buttonStudent1Save.Size = new System.Drawing.Size(130, 24);
-            this.buttonStudent1Save.TabIndex = 3;
-            this.buttonStudent1Save.Text = "저장";
-            this.buttonStudent1Save.UseVisualStyleBackColor = true;
+            this.labelStudent1ID.AutoSize = true;
+            this.labelStudent1ID.Location = new System.Drawing.Point(25, 57);
+            this.labelStudent1ID.Name = "labelStudent1ID";
+            this.labelStudent1ID.Size = new System.Drawing.Size(29, 12);
+            this.labelStudent1ID.TabIndex = 0;
+            this.labelStudent1ID.Text = "학번";
             // 
-            // buttonStudent1Delete
+            // textBoxStudent1Name
             // 
-            this.buttonStudent1Delete.Location = new System.Drawing.Point(90, 273);
-            this.buttonStudent1Delete.Name = "buttonStudent1Delete";
-            this.buttonStudent1Delete.Size = new System.Drawing.Size(130, 24);
-            this.buttonStudent1Delete.TabIndex = 3;
-            this.buttonStudent1Delete.Text = "삭제";
-            this.buttonStudent1Delete.UseVisualStyleBackColor = true;
+            this.textBoxStudent1Name.Location = new System.Drawing.Point(90, 27);
+            this.textBoxStudent1Name.Name = "textBoxStudent1Name";
+            this.textBoxStudent1Name.Size = new System.Drawing.Size(130, 21);
+            this.textBoxStudent1Name.TabIndex = 2;
+            // 
+            // labelStudent1Name
+            // 
+            this.labelStudent1Name.AutoSize = true;
+            this.labelStudent1Name.Location = new System.Drawing.Point(25, 30);
+            this.labelStudent1Name.Name = "labelStudent1Name";
+            this.labelStudent1Name.Size = new System.Drawing.Size(29, 12);
+            this.labelStudent1Name.TabIndex = 0;
+            this.labelStudent1Name.Text = "이름";
             // 
             // groupBoxStudent2Info
             // 
@@ -208,18 +211,20 @@ namespace StudentManagement_DB
             this.buttonStudent2Delete.Location = new System.Drawing.Point(90, 273);
             this.buttonStudent2Delete.Name = "buttonStudent2Delete";
             this.buttonStudent2Delete.Size = new System.Drawing.Size(130, 24);
-            this.buttonStudent2Delete.TabIndex = 3;
+            this.buttonStudent2Delete.TabIndex = 13;
             this.buttonStudent2Delete.Text = "삭제";
             this.buttonStudent2Delete.UseVisualStyleBackColor = true;
+            this.buttonStudent2Delete.Click += new System.EventHandler(this.buttonStudent2Delete_Click);
             // 
             // buttonStudent2Save
             // 
             this.buttonStudent2Save.Location = new System.Drawing.Point(90, 243);
             this.buttonStudent2Save.Name = "buttonStudent2Save";
             this.buttonStudent2Save.Size = new System.Drawing.Size(130, 24);
-            this.buttonStudent2Save.TabIndex = 3;
+            this.buttonStudent2Save.TabIndex = 12;
             this.buttonStudent2Save.Text = "저장";
             this.buttonStudent2Save.UseVisualStyleBackColor = true;
+            this.buttonStudent2Save.Click += new System.EventHandler(this.buttonStudent2Save_Click);
             // 
             // comboBoxStudent2Gender
             // 
@@ -227,7 +232,7 @@ namespace StudentManagement_DB
             this.comboBoxStudent2Gender.Location = new System.Drawing.Point(90, 81);
             this.comboBoxStudent2Gender.Name = "comboBoxStudent2Gender";
             this.comboBoxStudent2Gender.Size = new System.Drawing.Size(130, 20);
-            this.comboBoxStudent2Gender.TabIndex = 2;
+            this.comboBoxStudent2Gender.TabIndex = 10;
             // 
             // labelStudent2Gender
             // 
@@ -244,7 +249,7 @@ namespace StudentManagement_DB
             this.textBoxStudent2Memo.Multiline = true;
             this.textBoxStudent2Memo.Name = "textBoxStudent2Memo";
             this.textBoxStudent2Memo.Size = new System.Drawing.Size(130, 130);
-            this.textBoxStudent2Memo.TabIndex = 1;
+            this.textBoxStudent2Memo.TabIndex = 11;
             // 
             // labelStudent2Memo
             // 
@@ -260,7 +265,7 @@ namespace StudentManagement_DB
             this.textBoxStudent2ID.Location = new System.Drawing.Point(90, 54);
             this.textBoxStudent2ID.Name = "textBoxStudent2ID";
             this.textBoxStudent2ID.Size = new System.Drawing.Size(130, 21);
-            this.textBoxStudent2ID.TabIndex = 1;
+            this.textBoxStudent2ID.TabIndex = 9;
             // 
             // labelStudent2ID
             // 
@@ -276,7 +281,7 @@ namespace StudentManagement_DB
             this.textBoxStudent2Name.Location = new System.Drawing.Point(90, 27);
             this.textBoxStudent2Name.Name = "textBoxStudent2Name";
             this.textBoxStudent2Name.Size = new System.Drawing.Size(130, 21);
-            this.textBoxStudent2Name.TabIndex = 1;
+            this.textBoxStudent2Name.TabIndex = 8;
             // 
             // labelStudent2Name
             // 
@@ -311,18 +316,20 @@ namespace StudentManagement_DB
             this.buttonStudent3Delete.Location = new System.Drawing.Point(90, 273);
             this.buttonStudent3Delete.Name = "buttonStudent3Delete";
             this.buttonStudent3Delete.Size = new System.Drawing.Size(130, 24);
-            this.buttonStudent3Delete.TabIndex = 3;
+            this.buttonStudent3Delete.TabIndex = 19;
             this.buttonStudent3Delete.Text = "삭제";
             this.buttonStudent3Delete.UseVisualStyleBackColor = true;
+            this.buttonStudent3Delete.Click += new System.EventHandler(this.buttonStudent3Delete_Click);
             // 
             // buttonStudent3Save
             // 
             this.buttonStudent3Save.Location = new System.Drawing.Point(90, 243);
             this.buttonStudent3Save.Name = "buttonStudent3Save";
             this.buttonStudent3Save.Size = new System.Drawing.Size(130, 24);
-            this.buttonStudent3Save.TabIndex = 3;
+            this.buttonStudent3Save.TabIndex = 18;
             this.buttonStudent3Save.Text = "저장";
             this.buttonStudent3Save.UseVisualStyleBackColor = true;
+            this.buttonStudent3Save.Click += new System.EventHandler(this.buttonStudent3Save_Click);
             // 
             // comboBoxStudent3Gender
             // 
@@ -330,7 +337,7 @@ namespace StudentManagement_DB
             this.comboBoxStudent3Gender.Location = new System.Drawing.Point(90, 81);
             this.comboBoxStudent3Gender.Name = "comboBoxStudent3Gender";
             this.comboBoxStudent3Gender.Size = new System.Drawing.Size(130, 20);
-            this.comboBoxStudent3Gender.TabIndex = 2;
+            this.comboBoxStudent3Gender.TabIndex = 16;
             // 
             // labelStudent3Gender
             // 
@@ -347,7 +354,7 @@ namespace StudentManagement_DB
             this.textBoxStudent3Memo.Multiline = true;
             this.textBoxStudent3Memo.Name = "textBoxStudent3Memo";
             this.textBoxStudent3Memo.Size = new System.Drawing.Size(130, 130);
-            this.textBoxStudent3Memo.TabIndex = 1;
+            this.textBoxStudent3Memo.TabIndex = 17;
             // 
             // labelStudent3Memo
             // 
@@ -363,7 +370,7 @@ namespace StudentManagement_DB
             this.textBoxStudent3ID.Location = new System.Drawing.Point(90, 54);
             this.textBoxStudent3ID.Name = "textBoxStudent3ID";
             this.textBoxStudent3ID.Size = new System.Drawing.Size(130, 21);
-            this.textBoxStudent3ID.TabIndex = 1;
+            this.textBoxStudent3ID.TabIndex = 15;
             // 
             // labelStudent3ID
             // 
@@ -379,7 +386,7 @@ namespace StudentManagement_DB
             this.textBoxStudent3Name.Location = new System.Drawing.Point(90, 27);
             this.textBoxStudent3Name.Name = "textBoxStudent3Name";
             this.textBoxStudent3Name.Size = new System.Drawing.Size(130, 21);
-            this.textBoxStudent3Name.TabIndex = 1;
+            this.textBoxStudent3Name.TabIndex = 14;
             // 
             // labelStudent3Name
             // 
@@ -401,16 +408,6 @@ namespace StudentManagement_DB
             this.groupBoxSettingInfo.TabStop = false;
             this.groupBoxSettingInfo.Text = "설정 및 정보";
             // 
-            // checkBoxSettingInfo
-            // 
-            this.checkBoxSettingInfo.AutoSize = true;
-            this.checkBoxSettingInfo.Location = new System.Drawing.Point(25, 25);
-            this.checkBoxSettingInfo.Name = "checkBoxSettingInfo";
-            this.checkBoxSettingInfo.Size = new System.Drawing.Size(244, 16);
-            this.checkBoxSettingInfo.TabIndex = 0;
-            this.checkBoxSettingInfo.Text = "프로그램 시작시 자동으로 학생정보 로드";
-            this.checkBoxSettingInfo.UseVisualStyleBackColor = true;
-            // 
             // labelSettingInfo
             // 
             this.labelSettingInfo.AutoSize = true;
@@ -420,7 +417,18 @@ namespace StudentManagement_DB
             this.labelSettingInfo.TabIndex = 1;
             this.labelSettingInfo.Text = "현재 저장된 학생 수 : 0";
             // 
-            // Form1
+            // checkBoxSettingInfo
+            // 
+            this.checkBoxSettingInfo.AutoSize = true;
+            this.checkBoxSettingInfo.Location = new System.Drawing.Point(25, 25);
+            this.checkBoxSettingInfo.Name = "checkBoxSettingInfo";
+            this.checkBoxSettingInfo.Size = new System.Drawing.Size(244, 16);
+            this.checkBoxSettingInfo.TabIndex = 1;
+            this.checkBoxSettingInfo.Text = "프로그램 시작시 자동으로 학생정보 로드";
+            this.checkBoxSettingInfo.UseVisualStyleBackColor = true;
+            this.checkBoxSettingInfo.CheckedChanged += new System.EventHandler(this.checkBoxSettingInfo_CheckedChanged);
+            // 
+            // Assignment06
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -430,7 +438,7 @@ namespace StudentManagement_DB
             this.Controls.Add(this.groupBoxStudent2Info);
             this.Controls.Add(this.groupBoxStudent1);
             this.Controls.Add(this.buttonLoadStudentInfo);
-            this.Name = "Form1";
+            this.Name = "Assignment06";
             this.Text = "데이터베이스 프로그래밍 실습2";
             this.groupBoxStudent1.ResumeLayout(false);
             this.groupBoxStudent1.PerformLayout();

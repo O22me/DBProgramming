@@ -248,7 +248,7 @@ namespace MarketBrowser
             {
                 connection.Open();
 
-                string query = "INSERT INTO `s5414057`.`student` (`name`, `Contact`) VALUES ('dfasd', '1111');";
+                string query = "INSERT INTO `s5414057`.`student` (`name`, `gender`) VALUES ('박길동', '남자');";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
             }
@@ -266,7 +266,7 @@ namespace MarketBrowser
 
                 while (rdr.Read())
                 {
-                    string str = string.Format(rdr["Sid"] + " " + rdr["name"] + " " + rdr["Contact"]);
+                    string str = string.Format(rdr["id"] + " " + rdr["name"] + " " + rdr["gender"]);
                     textBoxSearchResult.Text += str;
                 }
                 rdr.Close();
