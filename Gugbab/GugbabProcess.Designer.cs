@@ -38,10 +38,10 @@ namespace Gugbab
             this.buttonSignIn = new System.Windows.Forms.Button();
             this.buttonSignOut = new System.Windows.Forms.Button();
             this.groupBoxCasher = new System.Windows.Forms.GroupBox();
-            this.dateTimePickerCasher = new System.Windows.Forms.DateTimePicker();
-            this.buttonCasher_Cowhead = new System.Windows.Forms.Button();
-            this.buttonCasher_Mix = new System.Windows.Forms.Button();
             this.buttonCasher_Blood = new System.Windows.Forms.Button();
+            this.buttonCasher_Mix = new System.Windows.Forms.Button();
+            this.buttonCasher_Cowhead = new System.Windows.Forms.Button();
+            this.dateTimePickerCasher = new System.Windows.Forms.DateTimePicker();
             this.groupBoxManager = new System.Windows.Forms.GroupBox();
             this.dataGridViewManager = new System.Windows.Forms.DataGridView();
             this.groupBoxCasher.SuspendLayout();
@@ -51,59 +51,64 @@ namespace Gugbab
             // 
             // textBoxID
             // 
-            this.textBoxID.Location = new System.Drawing.Point(38, 33);
+            this.textBoxID.Location = new System.Drawing.Point(33, 26);
+            this.textBoxID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(100, 25);
-            this.textBoxID.TabIndex = 0;
+            this.textBoxID.ShortcutsEnabled = false;
+            this.textBoxID.Size = new System.Drawing.Size(88, 21);
+            this.textBoxID.TabIndex = 1;
             // 
             // labelID
             // 
             this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(12, 36);
+            this.labelID.Location = new System.Drawing.Point(10, 29);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(20, 15);
+            this.labelID.Size = new System.Drawing.Size(16, 12);
             this.labelID.TabIndex = 1;
             this.labelID.Text = "ID";
             // 
             // labelSignIn
             // 
             this.labelSignIn.AutoSize = true;
-            this.labelSignIn.Location = new System.Drawing.Point(12, 9);
+            this.labelSignIn.Location = new System.Drawing.Point(10, 7);
             this.labelSignIn.Name = "labelSignIn";
-            this.labelSignIn.Size = new System.Drawing.Size(52, 15);
+            this.labelSignIn.Size = new System.Drawing.Size(44, 12);
             this.labelSignIn.TabIndex = 1;
             this.labelSignIn.Text = "Sign In";
             // 
             // textBoxPW
             // 
-            this.textBoxPW.Location = new System.Drawing.Point(188, 33);
+            this.textBoxPW.Location = new System.Drawing.Point(164, 26);
+            this.textBoxPW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPW.Name = "textBoxPW";
-            this.textBoxPW.Size = new System.Drawing.Size(100, 25);
-            this.textBoxPW.TabIndex = 0;
+            this.textBoxPW.Size = new System.Drawing.Size(88, 21);
+            this.textBoxPW.TabIndex = 2;
+            this.textBoxPW.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxPW_KeyUp);
             // 
             // labelPW
             // 
             this.labelPW.AutoSize = true;
-            this.labelPW.Location = new System.Drawing.Point(151, 36);
+            this.labelPW.Location = new System.Drawing.Point(132, 29);
             this.labelPW.Name = "labelPW";
-            this.labelPW.Size = new System.Drawing.Size(31, 15);
+            this.labelPW.Size = new System.Drawing.Size(23, 12);
             this.labelPW.TabIndex = 1;
             this.labelPW.Text = "PW";
             // 
             // labelSignStatement
             // 
             this.labelSignStatement.AutoSize = true;
-            this.labelSignStatement.Location = new System.Drawing.Point(434, 36);
+            this.labelSignStatement.Location = new System.Drawing.Point(351, 30);
             this.labelSignStatement.Name = "labelSignStatement";
-            this.labelSignStatement.Size = new System.Drawing.Size(172, 15);
+            this.labelSignStatement.Size = new System.Drawing.Size(142, 12);
             this.labelSignStatement.TabIndex = 2;
-            this.labelSignStatement.Text = "\"\"님 사용시작. Statement";
+            this.labelSignStatement.Text = "ID와 PW를 입력해주세요.";
             // 
             // buttonSignIn
             // 
-            this.buttonSignIn.Location = new System.Drawing.Point(310, 33);
+            this.buttonSignIn.Location = new System.Drawing.Point(271, 25);
+            this.buttonSignIn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSignIn.Name = "buttonSignIn";
-            this.buttonSignIn.Size = new System.Drawing.Size(99, 25);
+            this.buttonSignIn.Size = new System.Drawing.Size(74, 22);
             this.buttonSignIn.TabIndex = 3;
             this.buttonSignIn.Text = "Sign In";
             this.buttonSignIn.UseVisualStyleBackColor = true;
@@ -111,10 +116,11 @@ namespace Gugbab
             // 
             // buttonSignOut
             // 
-            this.buttonSignOut.Location = new System.Drawing.Point(689, 31);
+            this.buttonSignOut.Location = new System.Drawing.Point(615, 26);
+            this.buttonSignOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSignOut.Name = "buttonSignOut";
-            this.buttonSignOut.Size = new System.Drawing.Size(99, 25);
-            this.buttonSignOut.TabIndex = 3;
+            this.buttonSignOut.Size = new System.Drawing.Size(74, 21);
+            this.buttonSignOut.TabIndex = 4;
             this.buttonSignOut.Text = "Sign Out";
             this.buttonSignOut.UseVisualStyleBackColor = true;
             this.buttonSignOut.Click += new System.EventHandler(this.buttonSignOut_Click);
@@ -125,53 +131,61 @@ namespace Gugbab
             this.groupBoxCasher.Controls.Add(this.buttonCasher_Mix);
             this.groupBoxCasher.Controls.Add(this.buttonCasher_Cowhead);
             this.groupBoxCasher.Controls.Add(this.dateTimePickerCasher);
-            this.groupBoxCasher.Location = new System.Drawing.Point(15, 83);
+            this.groupBoxCasher.Location = new System.Drawing.Point(13, 66);
+            this.groupBoxCasher.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxCasher.Name = "groupBoxCasher";
-            this.groupBoxCasher.Size = new System.Drawing.Size(773, 161);
+            this.groupBoxCasher.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxCasher.Size = new System.Drawing.Size(676, 129);
             this.groupBoxCasher.TabIndex = 4;
             this.groupBoxCasher.TabStop = false;
             this.groupBoxCasher.Text = "캐셔용 화면";
             // 
-            // dateTimePickerCasher
+            // buttonCasher_Blood
             // 
-            this.dateTimePickerCasher.Location = new System.Drawing.Point(6, 24);
-            this.dateTimePickerCasher.Name = "dateTimePickerCasher";
-            this.dateTimePickerCasher.Size = new System.Drawing.Size(236, 25);
-            this.dateTimePickerCasher.TabIndex = 0;
-            // 
-            // buttonCasher_Cowhead
-            // 
-            this.buttonCasher_Cowhead.Location = new System.Drawing.Point(6, 95);
-            this.buttonCasher_Cowhead.Name = "buttonCasher_Cowhead";
-            this.buttonCasher_Cowhead.Size = new System.Drawing.Size(200, 60);
-            this.buttonCasher_Cowhead.TabIndex = 1;
-            this.buttonCasher_Cowhead.Text = "소머리국밥";
-            this.buttonCasher_Cowhead.UseVisualStyleBackColor = true;
+            this.buttonCasher_Blood.Location = new System.Drawing.Point(496, 76);
+            this.buttonCasher_Blood.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonCasher_Blood.Name = "buttonCasher_Blood";
+            this.buttonCasher_Blood.Size = new System.Drawing.Size(175, 48);
+            this.buttonCasher_Blood.TabIndex = 7;
+            this.buttonCasher_Blood.Text = "선지국밥";
+            this.buttonCasher_Blood.UseVisualStyleBackColor = true;
             // 
             // buttonCasher_Mix
             // 
-            this.buttonCasher_Mix.Location = new System.Drawing.Point(295, 95);
+            this.buttonCasher_Mix.Location = new System.Drawing.Point(258, 76);
+            this.buttonCasher_Mix.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCasher_Mix.Name = "buttonCasher_Mix";
-            this.buttonCasher_Mix.Size = new System.Drawing.Size(200, 60);
-            this.buttonCasher_Mix.TabIndex = 1;
+            this.buttonCasher_Mix.Size = new System.Drawing.Size(175, 48);
+            this.buttonCasher_Mix.TabIndex = 6;
             this.buttonCasher_Mix.Text = "섞어국밥";
             this.buttonCasher_Mix.UseVisualStyleBackColor = true;
             // 
-            // buttonCasher_Blood
+            // buttonCasher_Cowhead
             // 
-            this.buttonCasher_Blood.Location = new System.Drawing.Point(567, 95);
-            this.buttonCasher_Blood.Name = "buttonCasher_Blood";
-            this.buttonCasher_Blood.Size = new System.Drawing.Size(200, 60);
-            this.buttonCasher_Blood.TabIndex = 1;
-            this.buttonCasher_Blood.Text = "선지국밥";
-            this.buttonCasher_Blood.UseVisualStyleBackColor = true;
+            this.buttonCasher_Cowhead.Location = new System.Drawing.Point(5, 76);
+            this.buttonCasher_Cowhead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonCasher_Cowhead.Name = "buttonCasher_Cowhead";
+            this.buttonCasher_Cowhead.Size = new System.Drawing.Size(175, 48);
+            this.buttonCasher_Cowhead.TabIndex = 5;
+            this.buttonCasher_Cowhead.Text = "소머리국밥";
+            this.buttonCasher_Cowhead.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerCasher
+            // 
+            this.dateTimePickerCasher.Location = new System.Drawing.Point(6, 18);
+            this.dateTimePickerCasher.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePickerCasher.Name = "dateTimePickerCasher";
+            this.dateTimePickerCasher.Size = new System.Drawing.Size(207, 21);
+            this.dateTimePickerCasher.TabIndex = 9;
             // 
             // groupBoxManager
             // 
             this.groupBoxManager.Controls.Add(this.dataGridViewManager);
-            this.groupBoxManager.Location = new System.Drawing.Point(15, 250);
+            this.groupBoxManager.Location = new System.Drawing.Point(13, 200);
+            this.groupBoxManager.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxManager.Name = "groupBoxManager";
-            this.groupBoxManager.Size = new System.Drawing.Size(773, 188);
+            this.groupBoxManager.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxManager.Size = new System.Drawing.Size(676, 350);
             this.groupBoxManager.TabIndex = 2;
             this.groupBoxManager.TabStop = false;
             this.groupBoxManager.Text = "관리자용 화면";
@@ -179,18 +193,20 @@ namespace Gugbab
             // dataGridViewManager
             // 
             this.dataGridViewManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewManager.Location = new System.Drawing.Point(6, 24);
+            this.dataGridViewManager.Location = new System.Drawing.Point(5, 18);
+            this.dataGridViewManager.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewManager.Name = "dataGridViewManager";
             this.dataGridViewManager.RowHeadersWidth = 51;
             this.dataGridViewManager.RowTemplate.Height = 27;
-            this.dataGridViewManager.Size = new System.Drawing.Size(761, 150);
-            this.dataGridViewManager.TabIndex = 0;
+            this.dataGridViewManager.Size = new System.Drawing.Size(340, 121);
+            this.dataGridViewManager.TabIndex = 8;
+            this.dataGridViewManager.TabStop = false;
             // 
             // FormGugbab
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 561);
             this.Controls.Add(this.groupBoxManager);
             this.Controls.Add(this.groupBoxCasher);
             this.Controls.Add(this.buttonSignOut);
@@ -201,6 +217,7 @@ namespace Gugbab
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.textBoxPW);
             this.Controls.Add(this.textBoxID);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormGugbab";
             this.Text = "국밥매상프로그램";
             this.groupBoxCasher.ResumeLayout(false);
