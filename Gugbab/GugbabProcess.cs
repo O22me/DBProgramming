@@ -8,170 +8,60 @@ namespace Gugbab
 {
     public partial class FormGugbab : Form
     {
-        public FormGugbab()
+        public FormGugbab(string accessor_ = "")
         {
+            accessor = accessor_;
             InitializeComponent();
             InitializeVariables();
         }
 
+        //UPDATE `s5414057`.`GugbabType` SET `GUGBAB` = 'aa' WHERE (`GUGBAB` = '김치');
+
+
         private void InitializeVariables()
         {
-            buttonCasher_Sundae.Enabled = false;
-            buttonCasher_Pig.Enabled = false;
-            buttonCasher_Mix.Enabled = false;
-            buttonSignOut.Enabled = false;
-            dateTimePickerCasher.Enabled = false;
-            buttonManagerTotal.Enabled = false;
-            buttonUser1DateSell.Enabled = false;
-            buttonUser2DateSell.Enabled = false;
-            buttonGugbab_typeDateSell.Enabled = false;
-            buttonGugbab_typeMonthSell.Enabled = false;
+            comboBoxGugbabChoiceSell.Items.Clear();
             comboBoxGugbab_typeDateSell.SelectedIndex = 0;
             comboBoxGugbab_typeMonthSell.SelectedIndex = 0;
+            using (MySqlConnection connection = new MySqlConnection(strconnection))
+            {
+                connection.Open();
+
+                string query = "SELECT GUGBAB FROM s5414057.GugbabType;";
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    comboBoxGugbabChoiceSell.Items.Add(reader["GUGBAB"]);
+                }
+
+                reader.Close();
+                connection.Close();
+            }
         }
 
         //서버접속 connection설정
         string strconnection = "Server=27.96.130.41;Database=s5414057;Uid=s5414057;Pwd=s5414057;Charset=utf8";
-        //국밥가격 결정
-        string pig_price = "6000";
-        string mix_price = "6500";
-        string sundae_price = "7000";
         string accessor = "";
-
-        private void buttonSignIn_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection connection = new MySqlConnection(strconnection))
-            {
-                connection.Open();
-
-                string query = "SELECT ID, PW FROM s5414057.GugbabManager;";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                //DB에 저장된 ID, PW 읽어오기 <ID(키), PW(값)>으로 사용.
-                Dictionary<string, string> DB_idpw = new Dictionary<string, string>();
-                while (reader.Read())
-                {
-                    DB_idpw.Add(string.Format("{0}", reader["ID"]), string.Format("{0}", reader["PW"]));
-                }
-                reader.Close();
-
-                //일치하는 ID포함.
-                if (DB_idpw.ContainsKey(textBoxID.Text))
-                {
-                    string db_pw = DB_idpw[textBoxID.Text];
-                    //해당ID의 PW확인
-                    if (db_pw == textBoxPW.Text)
-                    {
-                        query = "SELECT NAME FROM s5414057.GugbabManager WHERE ID = '" + textBoxID.Text + "';";
-                        cmd.CommandText = query;
-                        reader = cmd.ExecuteReader();
-                        while (reader.Read())
-                        {
-                            accessor = string.Format("{0}", reader["NAME"]);
-                        }
-                        labelSignStatement.Text = string.Format("환영합니다. {0}님.", accessor);
-                    }
-                    else
-                    {
-                        labelSignStatement.Text = "ERROR : 잘못된 PW입니다.";
-                        return;
-                    }
-                }
-                else
-                {
-                    labelSignStatement.Text = "ERROR : 잘못된 ID입니다.";
-                    return;
-                }
-                reader.Close();
-                connection.Close();
-            }
-            buttonCasher_Pig.Enabled = true;
-            buttonCasher_Mix.Enabled = true;
-            buttonCasher_Sundae.Enabled = true;
-            textBoxID.Enabled = false;
-            textBoxPW.Enabled = false;
-            buttonSignIn.Enabled = false;
-            buttonSignOut.Enabled = true;
-            dateTimePickerCasher.Enabled = true;
-            buttonManagerTotal.Enabled = true;
-            buttonUser1DateSell.Enabled = true;
-            buttonUser2DateSell.Enabled = true;
-            buttonGugbab_typeDateSell.Enabled = true;
-            buttonGugbab_typeMonthSell.Enabled = true;
-        }
-
-        private void textBoxPW_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                buttonSignIn_Click(sender, e);
-            }
-        }
 
         private void buttonSignOut_Click(object sender, EventArgs e)
         {
-            buttonCasher_Pig.Enabled = false;
-            buttonCasher_Mix.Enabled = false;
-            buttonCasher_Sundae.Enabled = false;
-            textBoxID.Enabled = true;
-            textBoxPW.Enabled = true;
-            buttonSignIn.Enabled = true;
-            buttonSignOut.Enabled = false;
-            dateTimePickerCasher.Enabled = false;
-            buttonManagerTotal.Enabled = false;
-            buttonUser1DateSell.Enabled = false;
-            buttonUser2DateSell.Enabled = false;
-            buttonGugbab_typeDateSell.Enabled = false;
-            buttonGugbab_typeMonthSell.Enabled = false;
-            textBoxID.Clear();
-            textBoxPW.Clear();
-            labelSignStatement.Text = "로그아웃 되었습니다. 다시 로그인 해주세요.";
-        }
-
-        private void buttonCasher_Pig_Click(object sender, EventArgs e)
-        {
             using (MySqlConnection connection = new MySqlConnection(strconnection))
             {
                 connection.Open();
 
-                string query = "INSERT INTO `s5414057`.`Gugbab_Sell` (`SELLER`, `GUGBAB_TYPE`, `QUANTITY`, `PRICE`, `TOTAL`, `SALES_TIME`) " +
-                    "VALUES ('" + accessor + "', '돼지', '1', '" + pig_price + "', '" + Convert.ToString(1*Convert.ToInt32(pig_price)) + "', '" + dateTimePickerCasher.Text + "');";
+                string query = "INSERT INTO `s5414057`.`ConnectionRecord` (`ACCESSOR`, `SIGNINOUT`, `ACCESS_TIME`) VALUES ('" + accessor + "', 'OUT', '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "');";
+
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
 
                 connection.Close();
             }
-        }
-
-        private void buttonCasher_Mix_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection connection = new MySqlConnection(strconnection))
-            {
-                connection.Open();
-
-                string query = "INSERT INTO `s5414057`.`Gugbab_Sell` (`SELLER`, `GUGBAB_TYPE`, `QUANTITY`, `PRICE`, `TOTAL`, `SALES_TIME`) " +
-                    "VALUES ('" + accessor + "', '섞어', '1', '" + mix_price + "', '" + Convert.ToString(1 * Convert.ToInt32(mix_price)) + "', '" + dateTimePickerCasher.Text + "');";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                
-                connection.Close();
-            }
-        }
-
-        private void buttonCasher_Sundae_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection connection = new MySqlConnection(strconnection))
-            {
-                connection.Open();
-
-                string query = "INSERT INTO `s5414057`.`Gugbab_Sell` (`SELLER`, `GUGBAB_TYPE`, `QUANTITY`, `PRICE`, `TOTAL`, `SALES_TIME`) " +
-                    "VALUES ('" + accessor + "', '순대', '1', '" + sundae_price + "', '" + Convert.ToString(1 * Convert.ToInt32(sundae_price)) + "', '" + dateTimePickerCasher.Text + "');";
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-
-                connection.Close();
-            }
+            FormSignIn newformSignIn = new FormSignIn();
+            newformSignIn.Show();
+            this.Close();
         }
 
         private void buttonManagerTotal_Click(object sender, EventArgs e)
@@ -255,6 +145,62 @@ namespace Gugbab
                 adapter.Fill(dt);
 
                 dataGridViewGugbab_typeMonthSell.DataSource = dt;
+                connection.Close();
+            }
+        }
+
+        //SELECT PRICE FROM s5414057.GugbabType WHERE GUGBAB = '돼지';
+
+        private void buttonGugbabSell_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection connection = new MySqlConnection(strconnection))
+            {
+                connection.Open();
+
+                string query = "SELECT PRICE FROM s5414057.GugbabType WHERE GUGBAB = '" + comboBoxGugbabChoiceSell.Text + "';";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                string price = "";
+                while (reader.Read())
+                {
+                    price = string.Format("{0}", reader["PRICE"]);
+                }
+                reader.Close();
+
+                query = "INSERT INTO `s5414057`.`Gugbab_Sell` (`SELLER`, `GUGBAB_TYPE`, `QUANTITY`, `PRICE`, `TOTAL`, `SALES_TIME`) " +
+                    "VALUES ('" + accessor + "', '" + comboBoxGugbabChoiceSell.Text + "', '1', '" + price + "', '" + Convert.ToString(1 * Convert.ToInt32(price)) + "', '" + dateTimePickerCasher.Text + "');";
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+        }
+
+        //INSERT INTO `s5414057`.`GugbabType` (`GUGBAB`, `PRICE`) VALUES ('돼지', '6000');
+
+        private void buttonNewGugbabAdd_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection connection = new MySqlConnection(strconnection))
+            {
+                connection.Open();
+
+                string query = "INSERT INTO `s5414057`.`GugbabType` (`GUGBAB`, `PRICE`) VALUES ('" + textBoxNewGugbabName.Text + "', '" + textBoxNewGugbabPrice.Text + "');";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        private void buttonMenuChange_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection connection = new MySqlConnection(strconnection))
+            {
+                connection.Open();
+
+                string query = "UPDATE `s5414057`.`GugbabType` SET `GUGBAB` = '" + textBoxChangeAfter.Text + "' WHERE (`GUGBAB` = '" + textBoxChangeBefore.Text + "');";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+
                 connection.Close();
             }
         }
