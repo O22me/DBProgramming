@@ -31,44 +31,29 @@ namespace Gugbab
         {
             this.buttonSignOut = new System.Windows.Forms.Button();
             this.groupBoxCasher = new System.Windows.Forms.GroupBox();
+            this.labelMenuChange = new System.Windows.Forms.Label();
+            this.buttonMenuChange = new System.Windows.Forms.Button();
             this.buttonNewGugbabAdd = new System.Windows.Forms.Button();
             this.labelNewGugbabPrice = new System.Windows.Forms.Label();
             this.labelNewGugbabName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBoxChangeAfter = new System.Windows.Forms.TextBox();
             this.textBoxNewGugbabPrice = new System.Windows.Forms.TextBox();
+            this.textBoxChangeBefore = new System.Windows.Forms.TextBox();
             this.textBoxNewGugbabName = new System.Windows.Forms.TextBox();
             this.buttonGugbabSell = new System.Windows.Forms.Button();
             this.comboBoxGugbabChoiceSell = new System.Windows.Forms.ComboBox();
             this.dateTimePickerCasher = new System.Windows.Forms.DateTimePicker();
-            this.groupBoxManager = new System.Windows.Forms.GroupBox();
-            this.labelGugbab_typeMonthSell = new System.Windows.Forms.Label();
-            this.labelGugbab_typeDateSell = new System.Windows.Forms.Label();
-            this.comboBoxGugbab_typeMonthSell = new System.Windows.Forms.ComboBox();
-            this.comboBoxGugbab_typeDateSell = new System.Windows.Forms.ComboBox();
-            this.dataGridViewGugbab_typeMonthSell = new System.Windows.Forms.DataGridView();
-            this.dataGridViewGugbab_typeDateSell = new System.Windows.Forms.DataGridView();
-            this.buttonGugbab_typeMonthSell = new System.Windows.Forms.Button();
-            this.dataGridViewUser2DateSell = new System.Windows.Forms.DataGridView();
-            this.buttonGugbab_typeDateSell = new System.Windows.Forms.Button();
-            this.buttonUser2DateSell = new System.Windows.Forms.Button();
-            this.dataGridViewUser1DateSell = new System.Windows.Forms.DataGridView();
-            this.buttonUser1DateSell = new System.Windows.Forms.Button();
-            this.labelUser2DateSell = new System.Windows.Forms.Label();
-            this.buttonManagerTotal = new System.Windows.Forms.Button();
-            this.labelUser1DateSell = new System.Windows.Forms.Label();
-            this.labelManagerTotal = new System.Windows.Forms.Label();
-            this.dataGridViewTotal = new System.Windows.Forms.DataGridView();
-            this.labelMenuChange = new System.Windows.Forms.Label();
-            this.textBoxChangeBefore = new System.Windows.Forms.TextBox();
-            this.textBoxChangeAfter = new System.Windows.Forms.TextBox();
-            this.buttonMenuChange = new System.Windows.Forms.Button();
+            this.buttonManagerOption = new System.Windows.Forms.Button();
+            this.groupBoxTable = new System.Windows.Forms.GroupBox();
+            this.buttonTable1 = new System.Windows.Forms.Button();
+            this.buttonTable3 = new System.Windows.Forms.Button();
+            this.buttonTable4 = new System.Windows.Forms.Button();
+            this.buttonTable2 = new System.Windows.Forms.Button();
+            this.buttonTable5 = new System.Windows.Forms.Button();
+            this.buttonTable6 = new System.Windows.Forms.Button();
             this.groupBoxCasher.SuspendLayout();
-            this.groupBoxManager.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGugbab_typeMonthSell)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGugbab_typeDateSell)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser2DateSell)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser1DateSell)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTotal)).BeginInit();
+            this.groupBoxTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonSignOut
@@ -84,6 +69,7 @@ namespace Gugbab
             // 
             // groupBoxCasher
             // 
+            this.groupBoxCasher.Controls.Add(this.buttonManagerOption);
             this.groupBoxCasher.Controls.Add(this.labelMenuChange);
             this.groupBoxCasher.Controls.Add(this.buttonMenuChange);
             this.groupBoxCasher.Controls.Add(this.buttonNewGugbabAdd);
@@ -106,6 +92,27 @@ namespace Gugbab
             this.groupBoxCasher.TabIndex = 4;
             this.groupBoxCasher.TabStop = false;
             this.groupBoxCasher.Text = "캐셔용 화면";
+            // 
+            // labelMenuChange
+            // 
+            this.labelMenuChange.AutoSize = true;
+            this.labelMenuChange.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.labelMenuChange.Location = new System.Drawing.Point(240, 77);
+            this.labelMenuChange.Name = "labelMenuChange";
+            this.labelMenuChange.Size = new System.Drawing.Size(63, 13);
+            this.labelMenuChange.TabIndex = 15;
+            this.labelMenuChange.Text = "메뉴변경";
+            // 
+            // buttonMenuChange
+            // 
+            this.buttonMenuChange.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.buttonMenuChange.Location = new System.Drawing.Point(414, 72);
+            this.buttonMenuChange.Name = "buttonMenuChange";
+            this.buttonMenuChange.Size = new System.Drawing.Size(42, 49);
+            this.buttonMenuChange.TabIndex = 14;
+            this.buttonMenuChange.Text = "변경";
+            this.buttonMenuChange.UseVisualStyleBackColor = true;
+            this.buttonMenuChange.Click += new System.EventHandler(this.buttonMenuChange_Click);
             // 
             // buttonNewGugbabAdd
             // 
@@ -146,12 +153,26 @@ namespace Gugbab
             this.label1.TabIndex = 13;
             this.label1.Text = "메뉴추가";
             // 
+            // textBoxChangeAfter
+            // 
+            this.textBoxChangeAfter.Location = new System.Drawing.Point(308, 100);
+            this.textBoxChangeAfter.Name = "textBoxChangeAfter";
+            this.textBoxChangeAfter.Size = new System.Drawing.Size(100, 21);
+            this.textBoxChangeAfter.TabIndex = 12;
+            // 
             // textBoxNewGugbabPrice
             // 
             this.textBoxNewGugbabPrice.Location = new System.Drawing.Point(308, 46);
             this.textBoxNewGugbabPrice.Name = "textBoxNewGugbabPrice";
             this.textBoxNewGugbabPrice.Size = new System.Drawing.Size(100, 21);
             this.textBoxNewGugbabPrice.TabIndex = 12;
+            // 
+            // textBoxChangeBefore
+            // 
+            this.textBoxChangeBefore.Location = new System.Drawing.Point(308, 73);
+            this.textBoxChangeBefore.Name = "textBoxChangeBefore";
+            this.textBoxChangeBefore.Size = new System.Drawing.Size(100, 21);
+            this.textBoxChangeBefore.TabIndex = 12;
             // 
             // textBoxNewGugbabName
             // 
@@ -189,266 +210,105 @@ namespace Gugbab
             this.dateTimePickerCasher.TabIndex = 9;
             this.dateTimePickerCasher.TabStop = false;
             // 
-            // groupBoxManager
+            // buttonManagerOption
             // 
-            this.groupBoxManager.Controls.Add(this.labelGugbab_typeMonthSell);
-            this.groupBoxManager.Controls.Add(this.labelGugbab_typeDateSell);
-            this.groupBoxManager.Controls.Add(this.comboBoxGugbab_typeMonthSell);
-            this.groupBoxManager.Controls.Add(this.comboBoxGugbab_typeDateSell);
-            this.groupBoxManager.Controls.Add(this.dataGridViewGugbab_typeMonthSell);
-            this.groupBoxManager.Controls.Add(this.dataGridViewGugbab_typeDateSell);
-            this.groupBoxManager.Controls.Add(this.buttonGugbab_typeMonthSell);
-            this.groupBoxManager.Controls.Add(this.dataGridViewUser2DateSell);
-            this.groupBoxManager.Controls.Add(this.buttonGugbab_typeDateSell);
-            this.groupBoxManager.Controls.Add(this.buttonUser2DateSell);
-            this.groupBoxManager.Controls.Add(this.dataGridViewUser1DateSell);
-            this.groupBoxManager.Controls.Add(this.buttonUser1DateSell);
-            this.groupBoxManager.Controls.Add(this.labelUser2DateSell);
-            this.groupBoxManager.Controls.Add(this.buttonManagerTotal);
-            this.groupBoxManager.Controls.Add(this.labelUser1DateSell);
-            this.groupBoxManager.Controls.Add(this.labelManagerTotal);
-            this.groupBoxManager.Controls.Add(this.dataGridViewTotal);
-            this.groupBoxManager.Location = new System.Drawing.Point(12, 144);
-            this.groupBoxManager.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxManager.Name = "groupBoxManager";
-            this.groupBoxManager.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxManager.Size = new System.Drawing.Size(676, 762);
-            this.groupBoxManager.TabIndex = 2;
-            this.groupBoxManager.TabStop = false;
-            this.groupBoxManager.Text = "관리자용 화면";
+            this.buttonManagerOption.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.buttonManagerOption.Location = new System.Drawing.Point(595, 16);
+            this.buttonManagerOption.Name = "buttonManagerOption";
+            this.buttonManagerOption.Size = new System.Drawing.Size(75, 105);
+            this.buttonManagerOption.TabIndex = 5;
+            this.buttonManagerOption.Text = "Manager\r\nOption";
+            this.buttonManagerOption.UseVisualStyleBackColor = true;
+            this.buttonManagerOption.Click += new System.EventHandler(this.buttonManagerOption_Click);
             // 
-            // labelGugbab_typeMonthSell
+            // groupBoxTable
             // 
-            this.labelGugbab_typeMonthSell.AutoSize = true;
-            this.labelGugbab_typeMonthSell.Location = new System.Drawing.Point(85, 604);
-            this.labelGugbab_typeMonthSell.Name = "labelGugbab_typeMonthSell";
-            this.labelGugbab_typeMonthSell.Size = new System.Drawing.Size(57, 12);
-            this.labelGugbab_typeMonthSell.TabIndex = 13;
-            this.labelGugbab_typeMonthSell.Text = "월별 판매";
+            this.groupBoxTable.Controls.Add(this.buttonTable5);
+            this.groupBoxTable.Controls.Add(this.buttonTable3);
+            this.groupBoxTable.Controls.Add(this.buttonTable4);
+            this.groupBoxTable.Controls.Add(this.buttonTable2);
+            this.groupBoxTable.Controls.Add(this.buttonTable6);
+            this.groupBoxTable.Controls.Add(this.buttonTable1);
+            this.groupBoxTable.Location = new System.Drawing.Point(12, 145);
+            this.groupBoxTable.Name = "groupBoxTable";
+            this.groupBoxTable.Size = new System.Drawing.Size(676, 758);
+            this.groupBoxTable.TabIndex = 5;
+            this.groupBoxTable.TabStop = false;
+            this.groupBoxTable.Text = "테이블 주문(매장)";
             // 
-            // labelGugbab_typeDateSell
+            // buttonTable1
             // 
-            this.labelGugbab_typeDateSell.AutoSize = true;
-            this.labelGugbab_typeDateSell.Location = new System.Drawing.Point(85, 452);
-            this.labelGugbab_typeDateSell.Name = "labelGugbab_typeDateSell";
-            this.labelGugbab_typeDateSell.Size = new System.Drawing.Size(57, 12);
-            this.labelGugbab_typeDateSell.TabIndex = 13;
-            this.labelGugbab_typeDateSell.Text = "일일 판매";
+            this.buttonTable1.Location = new System.Drawing.Point(39, 64);
+            this.buttonTable1.Name = "buttonTable1";
+            this.buttonTable1.Size = new System.Drawing.Size(97, 71);
+            this.buttonTable1.TabIndex = 6;
+            this.buttonTable1.Text = "1번 테이블";
+            this.buttonTable1.UseVisualStyleBackColor = true;
+            this.buttonTable1.Click += new System.EventHandler(this.buttonTable1_Click);
             // 
-            // comboBoxGugbab_typeMonthSell
+            // buttonTable3
             // 
-            this.comboBoxGugbab_typeMonthSell.FormattingEnabled = true;
-            this.comboBoxGugbab_typeMonthSell.Items.AddRange(new object[] {
-            "돼지",
-            "섞어",
-            "순대"});
-            this.comboBoxGugbab_typeMonthSell.Location = new System.Drawing.Point(5, 601);
-            this.comboBoxGugbab_typeMonthSell.Name = "comboBoxGugbab_typeMonthSell";
-            this.comboBoxGugbab_typeMonthSell.Size = new System.Drawing.Size(74, 20);
-            this.comboBoxGugbab_typeMonthSell.TabIndex = 12;
-            this.comboBoxGugbab_typeMonthSell.TabStop = false;
+            this.buttonTable3.Location = new System.Drawing.Point(39, 156);
+            this.buttonTable3.Name = "buttonTable3";
+            this.buttonTable3.Size = new System.Drawing.Size(54, 164);
+            this.buttonTable3.TabIndex = 6;
+            this.buttonTable3.Text = "3번\r\n테이블";
+            this.buttonTable3.UseVisualStyleBackColor = true;
+            this.buttonTable3.Click += new System.EventHandler(this.buttonTable3_Click);
             // 
-            // comboBoxGugbab_typeDateSell
+            // buttonTable4
             // 
-            this.comboBoxGugbab_typeDateSell.FormattingEnabled = true;
-            this.comboBoxGugbab_typeDateSell.Items.AddRange(new object[] {
-            "돼지",
-            "섞어",
-            "순대"});
-            this.comboBoxGugbab_typeDateSell.Location = new System.Drawing.Point(5, 449);
-            this.comboBoxGugbab_typeDateSell.Name = "comboBoxGugbab_typeDateSell";
-            this.comboBoxGugbab_typeDateSell.Size = new System.Drawing.Size(74, 20);
-            this.comboBoxGugbab_typeDateSell.TabIndex = 12;
-            this.comboBoxGugbab_typeDateSell.TabStop = false;
+            this.buttonTable4.Location = new System.Drawing.Point(124, 156);
+            this.buttonTable4.Name = "buttonTable4";
+            this.buttonTable4.Size = new System.Drawing.Size(126, 164);
+            this.buttonTable4.TabIndex = 6;
+            this.buttonTable4.Text = "4번 테이블";
+            this.buttonTable4.UseVisualStyleBackColor = true;
+            this.buttonTable4.Click += new System.EventHandler(this.buttonTable4_Click);
             // 
-            // dataGridViewGugbab_typeMonthSell
+            // buttonTable2
             // 
-            this.dataGridViewGugbab_typeMonthSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGugbab_typeMonthSell.Location = new System.Drawing.Point(5, 627);
-            this.dataGridViewGugbab_typeMonthSell.Name = "dataGridViewGugbab_typeMonthSell";
-            this.dataGridViewGugbab_typeMonthSell.RowTemplate.Height = 23;
-            this.dataGridViewGugbab_typeMonthSell.Size = new System.Drawing.Size(662, 120);
-            this.dataGridViewGugbab_typeMonthSell.TabIndex = 11;
-            this.dataGridViewGugbab_typeMonthSell.TabStop = false;
+            this.buttonTable2.Location = new System.Drawing.Point(233, 64);
+            this.buttonTable2.Name = "buttonTable2";
+            this.buttonTable2.Size = new System.Drawing.Size(97, 71);
+            this.buttonTable2.TabIndex = 6;
+            this.buttonTable2.Text = "2번 테이블";
+            this.buttonTable2.UseVisualStyleBackColor = true;
+            this.buttonTable2.Click += new System.EventHandler(this.buttonTable2_Click);
             // 
-            // dataGridViewGugbab_typeDateSell
+            // buttonTable5
             // 
-            this.dataGridViewGugbab_typeDateSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGugbab_typeDateSell.Location = new System.Drawing.Point(5, 475);
-            this.dataGridViewGugbab_typeDateSell.Name = "dataGridViewGugbab_typeDateSell";
-            this.dataGridViewGugbab_typeDateSell.RowTemplate.Height = 23;
-            this.dataGridViewGugbab_typeDateSell.Size = new System.Drawing.Size(662, 120);
-            this.dataGridViewGugbab_typeDateSell.TabIndex = 11;
-            this.dataGridViewGugbab_typeDateSell.TabStop = false;
+            this.buttonTable5.Location = new System.Drawing.Point(268, 156);
+            this.buttonTable5.Name = "buttonTable5";
+            this.buttonTable5.Size = new System.Drawing.Size(62, 164);
+            this.buttonTable5.TabIndex = 6;
+            this.buttonTable5.Text = "5번\r\n테이블";
+            this.buttonTable5.UseVisualStyleBackColor = true;
+            this.buttonTable5.Click += new System.EventHandler(this.buttonTable5_Click);
             // 
-            // buttonGugbab_typeMonthSell
+            // buttonTable6
             // 
-            this.buttonGugbab_typeMonthSell.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonGugbab_typeMonthSell.Location = new System.Drawing.Point(148, 599);
-            this.buttonGugbab_typeMonthSell.Name = "buttonGugbab_typeMonthSell";
-            this.buttonGugbab_typeMonthSell.Size = new System.Drawing.Size(20, 20);
-            this.buttonGugbab_typeMonthSell.TabIndex = 10;
-            this.buttonGugbab_typeMonthSell.Text = "✔";
-            this.buttonGugbab_typeMonthSell.UseVisualStyleBackColor = true;
-            this.buttonGugbab_typeMonthSell.Click += new System.EventHandler(this.buttonGugbab_typeMonthSell_Click);
-            // 
-            // dataGridViewUser2DateSell
-            // 
-            this.dataGridViewUser2DateSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUser2DateSell.Location = new System.Drawing.Point(6, 323);
-            this.dataGridViewUser2DateSell.Name = "dataGridViewUser2DateSell";
-            this.dataGridViewUser2DateSell.RowTemplate.Height = 23;
-            this.dataGridViewUser2DateSell.Size = new System.Drawing.Size(662, 120);
-            this.dataGridViewUser2DateSell.TabIndex = 11;
-            this.dataGridViewUser2DateSell.TabStop = false;
-            // 
-            // buttonGugbab_typeDateSell
-            // 
-            this.buttonGugbab_typeDateSell.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonGugbab_typeDateSell.Location = new System.Drawing.Point(148, 447);
-            this.buttonGugbab_typeDateSell.Name = "buttonGugbab_typeDateSell";
-            this.buttonGugbab_typeDateSell.Size = new System.Drawing.Size(20, 20);
-            this.buttonGugbab_typeDateSell.TabIndex = 10;
-            this.buttonGugbab_typeDateSell.Text = "✔";
-            this.buttonGugbab_typeDateSell.UseVisualStyleBackColor = true;
-            this.buttonGugbab_typeDateSell.Click += new System.EventHandler(this.buttonGugbab_type_Click);
-            // 
-            // buttonUser2DateSell
-            // 
-            this.buttonUser2DateSell.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonUser2DateSell.Location = new System.Drawing.Point(109, 303);
-            this.buttonUser2DateSell.Name = "buttonUser2DateSell";
-            this.buttonUser2DateSell.Size = new System.Drawing.Size(20, 20);
-            this.buttonUser2DateSell.TabIndex = 10;
-            this.buttonUser2DateSell.Text = "✔";
-            this.buttonUser2DateSell.UseVisualStyleBackColor = true;
-            this.buttonUser2DateSell.Click += new System.EventHandler(this.buttonUser2DateSell_Click);
-            // 
-            // dataGridViewUser1DateSell
-            // 
-            this.dataGridViewUser1DateSell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUser1DateSell.Location = new System.Drawing.Point(6, 177);
-            this.dataGridViewUser1DateSell.Name = "dataGridViewUser1DateSell";
-            this.dataGridViewUser1DateSell.RowTemplate.Height = 23;
-            this.dataGridViewUser1DateSell.Size = new System.Drawing.Size(662, 120);
-            this.dataGridViewUser1DateSell.TabIndex = 11;
-            this.dataGridViewUser1DateSell.TabStop = false;
-            // 
-            // buttonUser1DateSell
-            // 
-            this.buttonUser1DateSell.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonUser1DateSell.Location = new System.Drawing.Point(109, 156);
-            this.buttonUser1DateSell.Name = "buttonUser1DateSell";
-            this.buttonUser1DateSell.Size = new System.Drawing.Size(20, 20);
-            this.buttonUser1DateSell.TabIndex = 10;
-            this.buttonUser1DateSell.Text = "✔";
-            this.buttonUser1DateSell.UseVisualStyleBackColor = true;
-            this.buttonUser1DateSell.Click += new System.EventHandler(this.buttonUser1DateSell_Click);
-            // 
-            // labelUser2DateSell
-            // 
-            this.labelUser2DateSell.AutoSize = true;
-            this.labelUser2DateSell.Location = new System.Drawing.Point(6, 308);
-            this.labelUser2DateSell.Name = "labelUser2DateSell";
-            this.labelUser2DateSell.Size = new System.Drawing.Size(93, 12);
-            this.labelUser2DateSell.TabIndex = 9;
-            this.labelUser2DateSell.Text = "User2 일일 판매";
-            // 
-            // buttonManagerTotal
-            // 
-            this.buttonManagerTotal.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonManagerTotal.Location = new System.Drawing.Point(109, 11);
-            this.buttonManagerTotal.Name = "buttonManagerTotal";
-            this.buttonManagerTotal.Size = new System.Drawing.Size(20, 20);
-            this.buttonManagerTotal.TabIndex = 10;
-            this.buttonManagerTotal.Text = "✔";
-            this.buttonManagerTotal.UseVisualStyleBackColor = true;
-            this.buttonManagerTotal.Click += new System.EventHandler(this.buttonManagerTotal_Click);
-            // 
-            // labelUser1DateSell
-            // 
-            this.labelUser1DateSell.AutoSize = true;
-            this.labelUser1DateSell.Location = new System.Drawing.Point(6, 161);
-            this.labelUser1DateSell.Name = "labelUser1DateSell";
-            this.labelUser1DateSell.Size = new System.Drawing.Size(93, 12);
-            this.labelUser1DateSell.TabIndex = 9;
-            this.labelUser1DateSell.Text = "User1 일일 판매";
-            // 
-            // labelManagerTotal
-            // 
-            this.labelManagerTotal.AutoSize = true;
-            this.labelManagerTotal.Location = new System.Drawing.Point(6, 16);
-            this.labelManagerTotal.Name = "labelManagerTotal";
-            this.labelManagerTotal.Size = new System.Drawing.Size(97, 12);
-            this.labelManagerTotal.TabIndex = 9;
-            this.labelManagerTotal.Text = "국밥 총 판매현황";
-            // 
-            // dataGridViewTotal
-            // 
-            this.dataGridViewTotal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTotal.Location = new System.Drawing.Point(6, 33);
-            this.dataGridViewTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridViewTotal.Name = "dataGridViewTotal";
-            this.dataGridViewTotal.RowHeadersWidth = 51;
-            this.dataGridViewTotal.RowTemplate.Height = 27;
-            this.dataGridViewTotal.Size = new System.Drawing.Size(662, 120);
-            this.dataGridViewTotal.TabIndex = 8;
-            this.dataGridViewTotal.TabStop = false;
-            // 
-            // labelMenuChange
-            // 
-            this.labelMenuChange.AutoSize = true;
-            this.labelMenuChange.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.labelMenuChange.Location = new System.Drawing.Point(240, 77);
-            this.labelMenuChange.Name = "labelMenuChange";
-            this.labelMenuChange.Size = new System.Drawing.Size(63, 13);
-            this.labelMenuChange.TabIndex = 15;
-            this.labelMenuChange.Text = "메뉴변경";
-            // 
-            // textBoxChangeBefore
-            // 
-            this.textBoxChangeBefore.Location = new System.Drawing.Point(308, 73);
-            this.textBoxChangeBefore.Name = "textBoxChangeBefore";
-            this.textBoxChangeBefore.Size = new System.Drawing.Size(100, 21);
-            this.textBoxChangeBefore.TabIndex = 12;
-            // 
-            // textBoxChangeAfter
-            // 
-            this.textBoxChangeAfter.Location = new System.Drawing.Point(308, 100);
-            this.textBoxChangeAfter.Name = "textBoxChangeAfter";
-            this.textBoxChangeAfter.Size = new System.Drawing.Size(100, 21);
-            this.textBoxChangeAfter.TabIndex = 12;
-            // 
-            // buttonMenuChange
-            // 
-            this.buttonMenuChange.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.buttonMenuChange.Location = new System.Drawing.Point(414, 72);
-            this.buttonMenuChange.Name = "buttonMenuChange";
-            this.buttonMenuChange.Size = new System.Drawing.Size(42, 49);
-            this.buttonMenuChange.TabIndex = 14;
-            this.buttonMenuChange.Text = "변경";
-            this.buttonMenuChange.UseVisualStyleBackColor = true;
-            this.buttonMenuChange.Click += new System.EventHandler(this.buttonMenuChange_Click);
+            this.buttonTable6.Location = new System.Drawing.Point(39, 343);
+            this.buttonTable6.Name = "buttonTable6";
+            this.buttonTable6.Size = new System.Drawing.Size(291, 71);
+            this.buttonTable6.TabIndex = 6;
+            this.buttonTable6.Text = "6번 테이블";
+            this.buttonTable6.UseVisualStyleBackColor = true;
+            this.buttonTable6.Click += new System.EventHandler(this.buttonTable6_Click);
             // 
             // FormGugbab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 915);
-            this.Controls.Add(this.groupBoxManager);
+            this.Controls.Add(this.groupBoxTable);
             this.Controls.Add(this.groupBoxCasher);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormGugbab";
             this.Text = "국밥매상프로그램";
             this.groupBoxCasher.ResumeLayout(false);
             this.groupBoxCasher.PerformLayout();
-            this.groupBoxManager.ResumeLayout(false);
-            this.groupBoxManager.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGugbab_typeMonthSell)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGugbab_typeDateSell)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser2DateSell)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUser1DateSell)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTotal)).EndInit();
+            this.groupBoxTable.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -457,24 +317,6 @@ namespace Gugbab
         private System.Windows.Forms.Button buttonSignOut;
         private System.Windows.Forms.GroupBox groupBoxCasher;
         private System.Windows.Forms.DateTimePicker dateTimePickerCasher;
-        private System.Windows.Forms.GroupBox groupBoxManager;
-        private System.Windows.Forms.DataGridView dataGridViewTotal;
-        private System.Windows.Forms.Label labelManagerTotal;
-        private System.Windows.Forms.Button buttonManagerTotal;
-        private System.Windows.Forms.DataGridView dataGridViewUser1DateSell;
-        private System.Windows.Forms.Label labelUser1DateSell;
-        private System.Windows.Forms.Button buttonUser1DateSell;
-        private System.Windows.Forms.DataGridView dataGridViewUser2DateSell;
-        private System.Windows.Forms.Button buttonUser2DateSell;
-        private System.Windows.Forms.Label labelUser2DateSell;
-        private System.Windows.Forms.Label labelGugbab_typeDateSell;
-        private System.Windows.Forms.ComboBox comboBoxGugbab_typeDateSell;
-        private System.Windows.Forms.DataGridView dataGridViewGugbab_typeDateSell;
-        private System.Windows.Forms.Button buttonGugbab_typeDateSell;
-        private System.Windows.Forms.Label labelGugbab_typeMonthSell;
-        private System.Windows.Forms.ComboBox comboBoxGugbab_typeMonthSell;
-        private System.Windows.Forms.DataGridView dataGridViewGugbab_typeMonthSell;
-        private System.Windows.Forms.Button buttonGugbab_typeMonthSell;
         private System.Windows.Forms.ComboBox comboBoxGugbabChoiceSell;
         private System.Windows.Forms.Button buttonGugbabSell;
         private System.Windows.Forms.Label labelNewGugbabPrice;
@@ -487,6 +329,14 @@ namespace Gugbab
         private System.Windows.Forms.Button buttonMenuChange;
         private System.Windows.Forms.TextBox textBoxChangeAfter;
         private System.Windows.Forms.TextBox textBoxChangeBefore;
+        private System.Windows.Forms.Button buttonManagerOption;
+        private System.Windows.Forms.GroupBox groupBoxTable;
+        private System.Windows.Forms.Button buttonTable5;
+        private System.Windows.Forms.Button buttonTable3;
+        private System.Windows.Forms.Button buttonTable4;
+        private System.Windows.Forms.Button buttonTable2;
+        private System.Windows.Forms.Button buttonTable6;
+        private System.Windows.Forms.Button buttonTable1;
     }
 }
 

@@ -15,14 +15,9 @@ namespace Gugbab
             InitializeVariables();
         }
 
-        //UPDATE `s5414057`.`GugbabType` SET `GUGBAB` = 'aa' WHERE (`GUGBAB` = '김치');
-
-
         private void InitializeVariables()
         {
             comboBoxGugbabChoiceSell.Items.Clear();
-            comboBoxGugbab_typeDateSell.SelectedIndex = 0;
-            comboBoxGugbab_typeMonthSell.SelectedIndex = 0;
             using (MySqlConnection connection = new MySqlConnection(strconnection))
             {
                 connection.Open();
@@ -64,90 +59,7 @@ namespace Gugbab
             this.Close();
         }
 
-        private void buttonManagerTotal_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection connection = new MySqlConnection(strconnection))
-            {
-                connection.Open();
-                string query = "SELECT * FROM s5414057.Gugbab_Sell;";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-                MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
-
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-
-                dataGridViewTotal.DataSource = dt;
-                connection.Close();
-            }
-        }
-
-        private void buttonUser1DateSell_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection connection = new MySqlConnection(strconnection))
-            {
-                connection.Open();
-                string query = "SELECT DATE_FORMAT(SALES_TIME, '%Y-%m-%d') AS DATE, sum(QUANTITY), sum(TOTAL) FROM s5414057.Gugbab_Sell  WHERE SELLER = 'User1' GROUP BY DATE_FORMAT(SALES_TIME, '%Y-%m-%d');";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-                MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
-
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-
-                dataGridViewUser1DateSell.DataSource = dt;
-                connection.Close();
-            }
-        }
-
-        private void buttonUser2DateSell_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection connection = new MySqlConnection(strconnection))
-            {
-                connection.Open();
-                string query = "SELECT DATE_FORMAT(SALES_TIME, '%Y-%m-%d') AS DATE, sum(QUANTITY), sum(TOTAL) FROM s5414057.Gugbab_Sell  WHERE SELLER = 'User2' GROUP BY DATE_FORMAT(SALES_TIME, '%Y-%m-%d');";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-                MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
-
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-
-                dataGridViewUser2DateSell.DataSource = dt;
-                connection.Close();
-            }
-        }
-
-        private void buttonGugbab_type_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection connection = new MySqlConnection(strconnection))
-            {
-                connection.Open();
-                string query = "SELECT DATE_FORMAT(SALES_TIME, '%Y-%m-%d') AS DATE, sum(QUANTITY), sum(TOTAL) FROM s5414057.Gugbab_Sell  WHERE GUGBAB_TYPE = '" + comboBoxGugbab_typeDateSell.Text + "' GROUP BY DATE_FORMAT(SALES_TIME, '%Y-%m-%d');";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-                MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
-
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-
-                dataGridViewGugbab_typeDateSell.DataSource = dt;
-                connection.Close();
-            }
-        }
-
-        private void buttonGugbab_typeMonthSell_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection connection = new MySqlConnection(strconnection))
-            {
-                connection.Open();
-                string query = "SELECT DATE_FORMAT(SALES_TIME, '%Y-%m') AS DATE, sum(QUANTITY), sum(TOTAL) FROM s5414057.Gugbab_Sell  WHERE GUGBAB_TYPE = '" + comboBoxGugbab_typeMonthSell.Text + "' GROUP BY DATE_FORMAT(SALES_TIME, '%Y-%m');";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-                MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
-
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-
-                dataGridViewGugbab_typeMonthSell.DataSource = dt;
-                connection.Close();
-            }
-        }
+        
 
         //SELECT PRICE FROM s5414057.GugbabType WHERE GUGBAB = '돼지';
 
@@ -203,6 +115,48 @@ namespace Gugbab
 
                 connection.Close();
             }
+        }
+
+        private void buttonManagerOption_Click(object sender, EventArgs e)
+        {
+            FormManager_Option newformManager = new FormManager_Option();
+            newformManager.Show();
+        }
+
+        private void buttonTable1_Click(object sender, EventArgs e)
+        {
+            FormTable newTable1 = new FormTable("1", accessor);
+            newTable1.Show();
+        }
+
+        private void buttonTable2_Click(object sender, EventArgs e)
+        {
+            FormTable newTable2 = new FormTable("2", accessor);
+            newTable2.Show();
+        }
+
+        private void buttonTable3_Click(object sender, EventArgs e)
+        {
+            FormTable newTable3 = new FormTable("3", accessor);
+            newTable3.Show();
+        }
+
+        private void buttonTable4_Click(object sender, EventArgs e)
+        {
+            FormTable newTable4 = new FormTable("4", accessor);
+            newTable4.Show();
+        }
+
+        private void buttonTable5_Click(object sender, EventArgs e)
+        {
+            FormTable newTable5 = new FormTable("5", accessor);
+            newTable5.Show();
+        }
+
+        private void buttonTable6_Click(object sender, EventArgs e)
+        {
+            FormTable newTable6 = new FormTable("6", accessor);
+            newTable6.Show();
         }
     }
 }

@@ -26,6 +26,7 @@ namespace Gugbab
 
         string strconnection = "Server=27.96.130.41;Database=s5414057;Uid=s5414057;Pwd=s5414057;Charset=utf8";
         string accessor = "";
+
         private void buttonSignIn_Click(object sender, EventArgs e)
         {
             using (MySqlConnection connection = new MySqlConnection(strconnection))
